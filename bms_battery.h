@@ -21,9 +21,10 @@ class BmsBattery : public PollingComponent {
   sensor::Sensor *cell_9_sensor_{new sensor::Sensor()};
   sensor::Sensor *cell_10_sensor_{new sensor::Sensor()};
 
+  void set_uart_parent(UARTDevice *parent) { this->parent_ = parent; }
+
   void setup() override;
   void update() override;
-  void loop() override;
 
  protected:
   UARTDevice *parent_;
